@@ -7,8 +7,7 @@
 
 #container {
   margin: auto;
-
-  width: 90%;
+  width: min(90%, 112rem);
 }
 
 .location,
@@ -44,12 +43,39 @@ h1,
 
 main h1 {
   animation-delay: 150ms;
+  font-size: clamp(4rem, 8vw, 8.4rem);
 }
 
 .visit p {
   animation-delay: 200ms;
 }
 
-.visit a {
+.visit a { 
   animation-delay: 250ms;
+}
+
+/*Desktop version*/
+@media (min-width: 760px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .location, h1, .visit p {
+    height: initial;
+    text-align: initial;
+  }
+
+  .location {
+    text-align: right;
+  }
+
+  main h1 {
+    font-weight: bold;
+    line-height: .88;
+
+    width: min(300px, 80%);
+  }
+
 }
